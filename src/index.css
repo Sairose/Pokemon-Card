@@ -1,0 +1,193 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ----------------nav-bar-------------- */
+nav{
+  height: 100px;
+  width: 100%;
+  background-color: #FFD100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: relative;
+
+  img{
+    width: 10rem;
+  }
+
+  .nav-head a{
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family:'Times New Roman', Times, serif;
+    text-decoration: none;
+    margin: 0 1rem;
+
+  }
+  .nav-head a.active{
+    color: rgb(63, 110, 51);
+  }
+
+  .fa-bars{
+    display: none;
+  }
+
+  @media screen and (max-width: 760px) {
+    .fa-bars{
+      display: block;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .nav-head{
+      position: absolute;
+      top: 0px;
+      right: -200px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 200px;
+      background-color: #375EA7;
+      height: 100vh;
+      padding-top: 4rem;
+      transition: all linear 0.8s;
+    }
+
+    .nav-head a{
+      color: #fff;
+    }
+
+    .nav-head a.active{
+      color: #FFD100;
+    }
+
+    .fa-bars{
+      z-index: 10;
+    }
+  }
+}
+
+
+
+/* -------------------pokemon-card------------- */
+
+.search{
+  height: 100px;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem ;
+
+  p{
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  input{
+      outline: none;
+      width: 15rem;
+      height: 2rem;
+      padding: 4px 8px;
+      border-radius: 5px;
+  }
+}
+
+.cards{
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  @media screen and (max-width: 760px){
+    justify-content: center;
+  }
+
+  .outer-div{
+    height: 400px;
+    width: 300px;
+    padding: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    h2{
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    img{
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .pokemon-details{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      p:first-child{
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: rgb(73, 241, 73);
+        border-radius: 5px;
+      }
+
+      p{
+        font-size: 0.9rem;
+        font-family: 'Courier New', Courier, monospace;
+      }
+    }
+  }
+}
+
+/* ---------------home page---------------- */
+
+.hero{
+  height: calc(100vh - 100px);
+  width: 100%;
+  background-image: url("pikachu_artwork.0.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding: 5rem 2rem;
+
+}
+.hero h2{
+  font-size: 4rem;
+  font-weight: 600;
+  animation: fade 1s linear ;
+}
+
+@keyframes fade {
+  0%{
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
